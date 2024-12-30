@@ -25,7 +25,6 @@ addl = None
 att = None
 run = False
 
-
 def connect_db():
     conn = psycopg2.connect(
         dbname="dbnamehere",
@@ -179,10 +178,10 @@ def atualizarLink():
             cursor.close()
             conn.close()
         except:
-            print('falha ao recuperar lista de ignorados')
+            print("Falha ao recuperar lista de ignorados")
         for ignored in ignored_companies:
             if ignored in atual:
-                print(f"Found ignored company '{ignored}' in '{atual}', executing script...")
+                print(f"Found ignored company '{ignored}' in '{atual}'")
                 driver.execute_script("window.history.go(-1)")
             elif atual == get_url:
                 driver.execute_script("window.history.go(-1)")
@@ -257,10 +256,10 @@ def repetir():
             cursor.close()
             conn.close()
         except:
-            print('falha ao recuperar lista de ignorados')
+            print("Falha ao recuperar lista de ignorados")
         for ignored in ignored_companies:
             if ignored in atual:
-                print(f"Found ignored company '{ignored}' in '{atual}', executing script...")
+                print(f"Found ignored company '{ignored}' in '{atual}'")
                 driver.execute_script("window.history.go(-1)")
             elif atual == get_url:
                 driver.execute_script("window.history.go(-1)")
